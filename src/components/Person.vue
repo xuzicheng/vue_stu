@@ -15,7 +15,7 @@
 let name = '张三'  // 注意此时不是响应式
 let age = 12      // 注意此时不是响应式
 let tel = '123245'
-let address = '东莞市'
+let address = '东莞市松山湖'
 
 //方法
 function changename() {
