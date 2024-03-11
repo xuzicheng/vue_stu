@@ -1,34 +1,22 @@
 <template>
   <div class="person">
-    <h2>姓名：{{ name }}</h2>
-    <h2>年龄：{{ age }}</h2>
-    <h2>地址：{{ address }}</h2>
-
-    <button @click="changename">修改名字</button>
-    <button @click="changeage">修改年龄</button>
-    <button @click="showTel">查看联系方式</button>
+    姓：<input type="text" v-model="firstname"><br>
+    名：<input type="text" v-model="lastname"><br>
+    全名：<span>{{ fullname }}</span><br>
   </div>
+
 </template>
 
 
 <script lang="ts" setup name="Person234">
-let name = '张三'  // 注意此时不是响应式
-let age = 12      // 注意此时不是响应式
-let tel = '123245'
-let address = '东莞市松山湖'
+import {computed, ref} from 'vue'
 
-//方法
-function changename() {
-  name = 'zhangsan'// 虽然改了，但这样修改并不是响应式的
-}
+let firstname = ref('张')
+let lastname = ref('三')
 
-function changeage() {
-  age += 1
-}
-
-function showTel() {
-  alert(tel)
-}
+let fullname = computed(() => {
+  return firstname.value.slice(0, 1).toUpperCase() + firstname.value.slice(1) + '-' + lastname.value
+})
 </script>
 
 
@@ -44,6 +32,10 @@ function showTel() {
 
 button {
   margin: 0 5px;
+}
+
+li {
+  font-size: 20px;
 }
 </style>
 
