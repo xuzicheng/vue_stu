@@ -16,6 +16,7 @@
 import useSum from '../hooks/useSum'
 import useDog from '../hooks/useDog'
 
+
 const {sum, add, bigSum} = useSum();
 const {imglist, addDog} = useDog();
 </script>
